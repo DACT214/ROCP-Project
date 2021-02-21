@@ -1,0 +1,16 @@
+package com.revature.menu;
+
+public class accountsMenu implements Menu {
+
+	int choice = 0;
+
+	@Override
+	public void display() {
+
+		System.out.println("=================       Account Menu       =================");
+		System.out.println("            Eneter your Account by NAME and CODE");
+		System.out.println("============================================================");
+
+	}
+
+}

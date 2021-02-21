@@ -1,0 +1,12 @@
+package com.revature.menu;
+
+public class accountsMenu implements Menu{
+
+	@Override
+	public void display() {
+		
+		
+	}
+	
+
+}

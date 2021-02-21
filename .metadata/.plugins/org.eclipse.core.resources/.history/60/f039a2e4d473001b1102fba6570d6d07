@@ -1,0 +1,32 @@
+package com.revature.menu;
+
+public class accountsMenu implements Menu {
+
+	@Override
+	public void display() {
+		
+		int choice = 0;
+		do {
+		System.out.println("=================       Account Menu       =================");
+		System.out.println("                    < 2. Enter Account? >");
+		System.out.println("                        < 1. Back >");
+		System.out.println("============================================================");
+			
+		try {
+			choice = Integer.parseInt(sc.nextLine());
+		} catch (NumberFormatException e) {
+		}
+			switch (choice) {
+			case 1: 
+				break;
+			case 2:
+				System.out.println("                   Enter Account Username ");
+			default:
+				System.out.println("                       Invalid Choice");
+			}
+		}
+		while (choice != 0);
+
+	}
+
+}
