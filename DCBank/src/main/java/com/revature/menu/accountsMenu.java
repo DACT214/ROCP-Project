@@ -19,12 +19,16 @@ public class accountsMenu implements Menu {
 			switch (choice) {
 			case 1: 
 				break;
+				
+				
 			case 2:
 				System.out.println("                   Enter Account Username");
 				String un = sc.nextLine();
 				un.toString();
-				
+				System.out.println(un);
 				break;
+				
+				
 			default:
 				System.out.println("                       Invalid Choice");
 				break;
@@ -32,11 +36,6 @@ public class accountsMenu implements Menu {
 		}
 		while (choice != 0);
 
-	}
-
-	private void username() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
