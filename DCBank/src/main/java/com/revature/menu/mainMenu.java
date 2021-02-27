@@ -7,7 +7,9 @@ public class mainMenu implements Menu{
 	public void display() {
 	do {
 		System.out.println("================= Revature Bank: DC Branch =================");
-		System.out.println("< 1: Exit > < 2: Account > < 3: Transactions >");
+		System.out.println("                  < 2: Your Account >");
+		System.out.println("                    < 3: Employees >");
+		System.out.println("                      < 1: Exit >");
 		System.out.println("============================================================");
 
 		try {
@@ -18,12 +20,12 @@ public class mainMenu implements Menu{
 		case 1:
 			break;
 		case 2:
-			Menu accountsMenu = new accountsMenu();
+			Menu accountsMenu = new AccountsMenu();
 			accountsMenu.display();
 			break;
 		case 3:
-			Menu transactionMenu = new transactionMenu();
-			transactionMenu.display();
+			Menu EmployeeMenu = new EmployeeMenu();
+			EmployeeMenu.display();
 			break;
 		default:
 			System.out.println("invalide choice");

@@ -3,26 +3,22 @@ package com.revature.menu;
 import java.sql.SQLException;
 
 import com.revature.exception.AccountNotFoundException;
-import com.revature.model.Account;
-import com.revature.service.AccountService;
-import com.revature.ui.AccountLogin;
+import com.revature.model.Employee;
+import com.revature.service.EmployeeService;
 
-public class AccountsMenu implements Menu {
+public class EmployeeMenu implements Menu {
 
-	public AccountService accountService;
-	public AccountLogin accountLogin;
-
-	public AccountsMenu() {
-		this.accountService = new AccountService();
-		this.accountLogin = new AccountLogin();
+	public EmployeeService employeeService;
+	
+	public EmployeeMenu () {
+		this.employeeService = new EmployeeService();
 	}
-
+	
 	@Override
 	public void display() {
-
 		int choice = 0;
 		do {
-			System.out.println("=================       Account Menu       =================");
+			System.out.println("=================       Employee Menu       =================");
 			System.out.println("                    	< 2. Login >");
 			System.out.println("                        < 3. Sign Up >");
 			System.out.println("                        < 1. Back >");
@@ -37,20 +33,18 @@ public class AccountsMenu implements Menu {
 				break;
 
 			case 2:
-				String un = getUsernameInput();
+				String emC = getEmCInput();
 				String pw = getPasswordInput();
 
 				try {
-					Account account = accountService.getAccountByUsername(un, pw);
+
+					Employee account = employeeService.getEmployeeByCode(emC, pw);
 
 					System.out.println("============================================================");
-//					System.out.println("Account ID: " + account.getAccID());
-//					System.out.println("Account Username: " + account.getUsername());
-//					System.out.println("Account holder: " + account.getFirstName() + " " + account.getLastName());
-//					System.out.println("Current Balance: " + account.getBalance());
+					System.out.println("Account ID: " + account.getEmID());
+					System.out.println("Account Username: " + account.getEmC());
+					System.out.println("Account holder: " + account.getFirstName() + " " + account.getLastName());
 					System.out.println("============================================================");
-
-					accountLogin.display(account);
 
 				} catch (SQLException | NullPointerException | AccountNotFoundException e) {
 					System.out.println();
@@ -68,8 +62,8 @@ public class AccountsMenu implements Menu {
 
 	}
 
-	private String getUsernameInput() {
-		System.out.println("Enter your username: ");
+	private String getEmCInput() {
+		System.out.println("Enter your Employee Code: ");
 		String input = Menu.sc.nextLine().trim();
 
 		return input;
