@@ -1,0 +1,9 @@
+package com.revature.main;
+
+public class Application {
+	public static void main(String[] args) {
+		System.out.println("================== Revature Bank: DC Branch ==================");
+		System.out.println("< 1: Account > < 2: Deposit > < 3: Withdrawl > < 4: Transaction >");
+		System.out.println("============================================================");
+	}
+}

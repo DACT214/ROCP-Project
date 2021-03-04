@@ -1,0 +1,13 @@
+package com.revature.menu;
+
+import java.util.Scanner;
+
+public interface Menu {	
+	
+	public static final Scanner sc = new Scanner(System.in);
+	
+	int choice = 0;
+	
+	void display();
+
+}

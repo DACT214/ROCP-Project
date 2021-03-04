@@ -1,0 +1,34 @@
+package com.revature.main;
+
+import java.util.Scanner;
+
+public class Application {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int choice= 0;
+		
+		System.out.println("================= Revature Bank: DC Branch =================");
+		System.out.println("< 1: Account > < 2: Deposit > < 3: Withdrawl > < 4: Transaction >");
+		System.out.println("============================================================");
+		
+		
+				try {
+		choice = Integer.parseInt(sc.nextLine());
+				}catch(NumberFormatException e){
+				}
+		switch(choice){
+			case 1: 
+				System.out.println("bye");
+				break;
+			case 2:
+				System.out.println("hello");
+				break;
+			default:
+				System.out.println("invalide choice");
+		}
+
+		sc.close();
+	}
+}

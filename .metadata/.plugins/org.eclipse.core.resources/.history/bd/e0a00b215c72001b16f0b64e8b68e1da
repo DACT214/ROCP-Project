@@ -1,0 +1,9 @@
+package com.revature.main;
+
+public class Application {
+	public static void main(String[] args) {
+		System.out.println("Revature Bank: DC Branch");
+		System.out.println("<1: account> <2: deposit> <3: withdrawl> <4: transaction>");
+		
+	}
+}
