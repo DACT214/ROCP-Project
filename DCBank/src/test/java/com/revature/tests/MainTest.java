@@ -1,6 +1,10 @@
 package com.revature.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +14,14 @@ import com.revature.model.Account;
 public class MainTest {
 	public Account account;
 	public Account account2;
+	public Account nullAccount;
+	public Account newAccount;
 	
 	@Before
 	public void setUp() {
 		this.account = new Account();
 		this.account2 = new Account();
+		this.newAccount = new Account();
 	}
 	
 	@Test
@@ -87,7 +94,47 @@ public class MainTest {
 	}
 	
 	@Test
-	public void test() {
+	public void nullAccountTest() {
 		
+		Account x =  nullAccount;
+		
+		assertEquals(null, x);
 	}
+	
+	@Test
+	public void signUpTest() {
+		String x = "default";
+		
+		String userInput = "bob202";
+		String password = "abc123";
+		String first = "bob";
+		String last = "hill";
+		double balance = 500;
+		
+		newAccount.setAccID("5");
+		newAccount.setUsername(userInput);
+		newAccount.setPassword(password);
+		newAccount.setFirstName(first);
+		newAccount.setLastName(last);
+		newAccount.setBalance(balance);
+		newAccount.setStatus(x);
+	
+		assertTrue(newAccount.getAccID() != null && newAccount.getUsername() != null &&
+				newAccount.getPassword() != null && newAccount.getFirstName() != null && 
+				newAccount.getLastName() != null && newAccount.getBalance() >= 0 && 
+				newAccount.getStatus() != null);
+	}
+	
+	@Test
+	public void deleteAccountTest() {
+		ArrayList<Account> arr = new ArrayList<Account>();
+		
+		arr.add(newAccount);
+		arr.add(newAccount);
+		arr.add(account2);
+		
+		assertTrue(arr.toString() != null);
+	}
+	
+	
 }
