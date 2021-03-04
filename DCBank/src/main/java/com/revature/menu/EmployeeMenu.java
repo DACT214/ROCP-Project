@@ -5,13 +5,17 @@ import java.sql.SQLException;
 import com.revature.exception.AccountNotFoundException;
 import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
+import com.revature.ui.EmployeeLogin;
 
 public class EmployeeMenu implements Menu {
 
 	public EmployeeService employeeService;
+	public EmployeeLogin employeeLogin;
+
 	
 	public EmployeeMenu () {
 		this.employeeService = new EmployeeService();
+		this.employeeLogin = new EmployeeLogin();
 	}
 	
 	@Override
@@ -20,7 +24,6 @@ public class EmployeeMenu implements Menu {
 		do {
 			System.out.println("=================       Employee Menu       =================");
 			System.out.println("                    	< 2. Login >");
-			System.out.println("                        < 3. Sign Up >");
 			System.out.println("                        < 1. Back >");
 			System.out.println("============================================================");
 
@@ -41,15 +44,15 @@ public class EmployeeMenu implements Menu {
 					Employee account = employeeService.getEmployeeByCode(emC, pw);
 
 					System.out.println("============================================================");
-					System.out.println("Account ID: " + account.getEmID());
-					System.out.println("Account Username: " + account.getEmC());
-					System.out.println("Account holder: " + account.getFirstName() + " " + account.getLastName());
+					System.out.println("Employee ID: " + account.getEmID());
+					System.out.println("Employee Username: " + account.getEmC());
+					System.out.println("Employee name: " + account.getFirstName() + " " + account.getLastName());
 					System.out.println("============================================================");
-
+					
+					employeeLogin.display(account);
+					
 				} catch (SQLException | NullPointerException | AccountNotFoundException e) {
-					System.out.println();
-					System.out.println("             Try again or create an account.");
-					System.out.println();
+					System.out.println(e.fillInStackTrace());
 				}
 
 				break;

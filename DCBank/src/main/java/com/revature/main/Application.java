@@ -1,12 +1,10 @@
 package com.revature.main;
 
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.revature.menu.Menu;
 import com.revature.menu.mainMenu;
-import com.revature.util.connectionUtil;
 
 
 public class Application {
@@ -17,8 +15,8 @@ public class Application {
 	mainMenu.display();
 
 	
-	Connection con = connectionUtil.getConnection();
-System.out.println(con.hashCode());
+//	Connection con = connectionUtil.getConnection();
+//System.out.println(con.hashCode());
 		
 		
 		

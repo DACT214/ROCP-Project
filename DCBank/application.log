@@ -1,0 +1,4 @@
+03-03-2021 11:48:11 {INFO} [com.revature.ui.DepositUI] - user: JS123 (John Smith) DEPOSITED $5000.0 into their account.
+03-03-2021 11:48:57 {INFO} [com.revature.ui.WithdrawlUI] - user: JB098 (Jane Baker) WITHDRAWLED $1000.0 from their account.
+03-03-2021 11:49:07 {INFO} [com.revature.ui.WithdrawlUI] - user: JB098 (Jane Baker) WITHDRAWLED $3000.0 from their account.
+03-03-2021 11:49:50 {INFO} [com.revature.ui.TransferUI] - user: JS123 (John Smith) TRANSFERED $10000.0 TO JS456 (John Smith)

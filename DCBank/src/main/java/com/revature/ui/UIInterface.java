@@ -7,6 +7,6 @@ import com.revature.model.Account;
 public interface UIInterface {
 	public static final Scanner sc = new Scanner(System.in);
 	
-	void display(Account account);
+	void displayUI(Account account);
 
 }

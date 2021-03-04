@@ -6,15 +6,18 @@ import com.revature.exception.AccountNotFoundException;
 import com.revature.model.Account;
 import com.revature.service.AccountService;
 import com.revature.ui.AccountLogin;
+import com.revature.ui.AccountSignUp;
 
 public class AccountsMenu implements Menu {
 
 	public AccountService accountService;
 	public AccountLogin accountLogin;
+	public AccountSignUp accountSignUp;
 
 	public AccountsMenu() {
 		this.accountService = new AccountService();
 		this.accountLogin = new AccountLogin();
+		this.accountSignUp = new AccountSignUp();
 	}
 
 	@Override
@@ -44,13 +47,9 @@ public class AccountsMenu implements Menu {
 					Account account = accountService.getAccountByUsername(un, pw);
 
 					System.out.println("============================================================");
-//					System.out.println("Account ID: " + account.getAccID());
-//					System.out.println("Account Username: " + account.getUsername());
-//					System.out.println("Account holder: " + account.getFirstName() + " " + account.getLastName());
-//					System.out.println("Current Balance: " + account.getBalance());
 					System.out.println("============================================================");
 
-					accountLogin.display(account);
+					accountLogin.displayUI(account);
 
 				} catch (SQLException | NullPointerException | AccountNotFoundException e) {
 					System.out.println();
@@ -59,7 +58,9 @@ public class AccountsMenu implements Menu {
 				}
 
 				break;
-
+			case 3:
+				accountSignUp.display();
+				break;
 			default:
 				System.out.println("                       Invalid Choice");
 				break;
